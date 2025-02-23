@@ -1,0 +1,98 @@
+Sun Feb 23 22:20:45 2025: 634 lines, 256 keystrokes in 419.11 sec
+Sun Feb 23 22:59:02 2025: 6 valid lines in 343.94 sec
+print("Hello Worlfd
+print(alert_messaege
+function( get function getName () {
+return
+def print_alert_meassage():
+pruniint(alert_message)
+Sun Feb 23 23:11:36 2025 | Line 1: def print_alert_mes
+Sun Feb 23 23:11:40 2025 | Line 2: print
+Sun Feb 23 23:12:01 2025 | Line 3: #Har ghadi def
+
+Session Summary: 3 valid lines in 47.66 sec
+Sun Feb 23 23:11:36 2025 | Line 1: def print_alert_mes
+Sun Feb 23 23:11:40 2025 | Line 2: print
+Sun Feb 23 23:12:01 2025 | Line 3: #Har ghadi def
+Sun Feb 23 23:16:24 2025 | Line 1: print ("This statement
+Sun Feb 23 23:17:38 2025 | Line 2: pirint ("
+Sun Feb 23 23:17:47 2025 | Line 3: int a = 44
+Sun Feb 23 23:23:14 2025 | Line 1: a = 10
+Sun Feb 23 23:23:20 2025 | Line 2: b = a + 10
+Sun Feb 23 23:23:23 2025 | Line 3: print
+Sun Feb 23 23:25:25 2025 | Line 1: print
+Sun Feb 23 23:25:28 2025 | Line 2: def
+Sun Feb 23 23:25:29 2025 | Line 3: def
+Sun Feb 23 23:25:30 2025 | Line 4: def
+Sun Feb 23 23:25:31 2025 | Line 5: def
+Sun Feb 23 23:25:34 2025 | Line 6: How to def
+Sun Feb 23 23:26:13 2025 | Line 7: def func(a:
+Sun Feb 23 23:26:16 2025 | Line 8: print
+Sun Feb 23 23:35:00 2025 | Line 1: return 10;
+Sun Feb 23 23:35:09 2025 | Line 2: int a = 45;
+Sun Feb 23 23:35:31 2025 | Line 3: int n = predorder,.size();
+Sun Feb 23 23:38:27 2025 | Line 4: def
+Sun Feb 23 23:39:23 2025 | Line 1: stopdef feunc(`)
+
+=== Session Summary ===
+Valid lines coded: 1
+Time elapsed: 36.15 sec
+CPU Usage: 11.9%
+Sun Feb 23 23:39:23 2025 | Line 1: stopdef feunc(`)
+Mon Feb 24 00:07:54 2025 | Line 1: def
+Mon Feb 24 00:08:10 2025 | Line 2: int c = 21
+Mon Feb 24 00:08:24 2025 | Line 3: std::cout << "The value of c is
+Mon Feb 24 00:08:30 2025 | Line 4: cout
+Mon Feb 24 00:08:32 2025 | Line 5: cin
+
+=== Session Summary ===
+Valid lines coded: 5
+Time elapsed: 106.42 sec
+CPU Usage: 15.7%
+Mon Feb 24 00:07:54 2025 | Line 1: def
+Mon Feb 24 00:08:10 2025 | Line 2: int c = 21
+Mon Feb 24 00:08:24 2025 | Line 3: std::cout << "The value of c is
+Mon Feb 24 00:08:30 2025 | Line 4: cout
+Mon Feb 24 00:08:32 2025 | Line 5: cin
+Mon Feb 24 00:10:06 2025 | Line 1: def
+Mon Feb 24 00:10:09 2025 | Line 2: cout
+Mon Feb 24 00:10:15 2025 | Line 3: otinprint
+
+=== Session Summary ===
+Valid lines coded: 3
+Time elapsed: 37.21 sec
+CPU Usage: 14.9%
+Mon Feb 24 00:10:06 2025 | Line 1: def
+Mon Feb 24 00:10:09 2025 | Line 2: cout
+Mon Feb 24 00:10:15 2025 | Line 3: otinprint
+
+=== Session Summary ===
+Valid lines coded: 3
+Time elapsed: 160.93 sec
+CPU Usage: 11.2%
+Mon Feb 24 00:10:06 2025 | Line 1: def
+Mon Feb 24 00:10:09 2025 | Line 2: cout
+Mon Feb 24 00:10:15 2025 | Line 3: otinprint
+Mon Feb 24 00:16:54 2025 | Line 1: def
+
+=== Session Summary ===
+Valid lines coded: 1
+Time elapsed: 25.53 sec
+CPU Usage: 13.8%
+Mon Feb 24 00:16:54 2025 | Line 1: def
+Mon Feb 24 00:32:56 2025 | Line 1:  how do i save when in terminal
+
+=== Session Summary ===
+Valid lines coded: 0
+Time elapsed: 8.38 sec
+CPU Usage: 7.8%
+
+=== Session Summary ===
+Valid lines coded: 0
+Time elapsed: 9.39 sec
+CPU Usage: 9.7%
+
+=== Session Summary ===
+Valid lines coded: 0
+Time elapsed: 196.09 sec
+CPU Usage: 7.6%
