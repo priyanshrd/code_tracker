@@ -5,9 +5,8 @@ import psutil  # For CPU usage details
 import tkinter as tk  # For GUI overlay
 from threading import Thread
 
-LOG_FILE = "C:\\code_tracker\\coding_progress.txt"
-LINES_COUNT_FILE = "C:\\code_tracker\\lines_count.txt"
-stack = []  # Stack to store valid lines of code
+# Global variables
+valid_lines_count = 0  # Counter for valid lines of code
 session_start = time.time()
 current_line = ""  # Store current line before Enter
 
@@ -77,7 +76,7 @@ def update_overlay():
     """Update the overlay with the current count of valid lines and CPU usage."""
     while True:
         cpu_usage = psutil.cpu_percent(interval=1)  # Get CPU usage
-        count_label.config(text=f"Valid Lines: {len(stack)}\nCPU Usage: {cpu_usage}%")
+        count_label.config(text=f"Valid Lines: {valid_lines_count}\nCPU Usage: {cpu_usage}%")
         time.sleep(1)  # Update every second
 
 def on_press(key):
@@ -96,41 +95,30 @@ def on_press(key):
             current_line += " "  # Add spaces to the current line
             termination_buffer += " "  # Add spaces to the termination buffer
 
+        # Handle Backspace and Delete keys
+        elif key == keyboard.Key.backspace:
+            if current_line:  # Remove the last character
+                current_line = current_line[:-1]
+                termination_buffer = termination_buffer[:-1]
+
+        elif key == keyboard.Key.delete:
+            # Delete key doesn't modify `current_line` directly, so we ignore it
+            pass
+
     except AttributeError:
         pass  # Ignore function keys
 
 def on_release(key):
-    global current_line
+    global current_line, valid_lines_count
 
     if key == keyboard.Key.enter:
         stripped_line = current_line.strip()
         if stripped_line:  # Only count non-empty lines
             if code_pattern.search(stripped_line):  # Check if it's a line of code
-                # Store line with timestamp and line number
-                line_data = {
-                    "timestamp": time.ctime(),
-                    "line_number": len(stack) + 1,
-                    "code": stripped_line
-                }
-                stack.append(line_data)  # Push valid line to stack
-                print(f"Valid lines coded: {len(stack)}")
-                log_line(line_data)  # Log the line immediately
-                save_lines_count()  # Update the lines count file
-
-            else:
-                print(f"Line not considered as code: {stripped_line}")
+                valid_lines_count += 1  # Increment the valid lines counter
+                print(f"Valid lines coded: {valid_lines_count}")
 
         current_line = ""  # Reset current line
-
-def log_line(line_data):
-    """Log a single valid line of code with timestamp and line number."""
-    with open(LOG_FILE, "a") as file:
-        file.write(f"{line_data['timestamp']} | Line {line_data['line_number']}: {line_data['code']}\n")
-
-def save_lines_count():
-    """Save the current number of valid lines to a file."""
-    with open(LINES_COUNT_FILE, "w") as file:
-        file.write(f"{len(stack)}")
 
 def display_summary_and_exit():
     """Display summary of lines coded and CPU usage, then exit."""
@@ -138,19 +126,11 @@ def display_summary_and_exit():
     cpu_usage = psutil.cpu_percent(interval=1)  # Get CPU usage
 
     print("\n=== Session Summary ===")
-    print(f"Valid lines coded: {len(stack)}")
+    print(f"Valid lines coded: {valid_lines_count}")
     print(f"Time elapsed: {elapsed_time} sec")
     print(f"CPU Usage: {cpu_usage}%")
 
-    with open(LOG_FILE, "a") as file:
-        file.write(f"\n=== Session Summary ===\n")
-        file.write(f"Valid lines coded: {len(stack)}\n")
-        file.write(f"Time elapsed: {elapsed_time} sec\n")
-        file.write(f"CPU Usage: {cpu_usage}%\n")
-        for line_data in stack:
-            file.write(f"{line_data['timestamp']} | Line {line_data['line_number']}: {line_data['code']}\n")
-
-    print("\nProgram terminated. Summary saved to log file.")
+    print("\nProgram terminated.")
     root.destroy()  # Close the overlay window
     exit()
 
